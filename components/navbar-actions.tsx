@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import { ShoppingBag } from 'lucide-react';
-import Button from './ui/button';
-import { useEffect, useState } from 'react';
-import useCart from '@/hooks/use-cart';
-import { useRouter } from 'next/navigation';
+import Button from "./ui/button";
+import { useEffect, useState } from "react";
+import useCart from "@/hooks/use-cart";
+import { useRouter } from "next/navigation";
+import { User } from "lucide-react";
+
 const NavbarActions = () => {
-  const [isMounted, seIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    seIsMounted(true);
+    setIsMounted(true);
   }, []);
 
   const router = useRouter();
@@ -19,15 +20,13 @@ const NavbarActions = () => {
     return null;
   }
   return (
-    <div className='ml-auto flex items-center gap-x-4'>
+    <div className="ml-auto flex items-center gap-x-4">
       <Button
-        onClick={() => router.push('/cart')}
-        className='flex items-center rounded-full bg-black px-4 py-2'
+        onClick={() => router.push("/user")}
+        className="flex items-center rounded-full bg-white px-4 py-2"
       >
-        <ShoppingBag size={20} color='white' />
-        <span className='ml-2 text-sm font-medium text-white'>
-          {cart.items.length}
-        </span>
+        <User color="black"/>
+        {/* <span className="ml-2 text-sm font-medium text-white">User</span> */}
       </Button>
     </div>
   );
