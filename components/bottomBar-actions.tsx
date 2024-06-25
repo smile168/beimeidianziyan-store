@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Search } from "lucide-react";
-import { Cigarette } from "lucide-react";
+import { ClipboardList } from "lucide-react";
 import { Filter } from "lucide-react";
 import { cn } from "@/lib/util";
 
@@ -21,7 +21,7 @@ const BottomBarActions = () => {
   return (
     <div className="w-full flex justify-between items-center gap-x-4">
       <Button
-        className="flex flex-col items-center rounded-full bg-white px-4 py-2 font-normal"
+        className="flex flex-col items-center border-transparent shadow-none p-2"
         onClick={() => isClickHandler("search")}
       >
         <Search
@@ -30,16 +30,16 @@ const BottomBarActions = () => {
         />
         <span
           className={cn(
-            "ml-2 text-sm text-black",
+            "text-sm text-black",
             isClicked === "search" ? "font-bold" : "font-normal"
           )}
         >
-          Search
+          搜索
         </span>
       </Button>
 
       <Button
-        className="flex flex-col items-center rounded-full bg-white px-4 py-2 font-normal"
+        className="flex flex-col items-center border-transparent shadow-none p-2"
         onClick={() => isClickHandler("filter")}
       >
         <Filter
@@ -48,28 +48,28 @@ const BottomBarActions = () => {
         />
         <span
           className={cn(
-            "ml-2 text-sm text-black",
+            "text-sm text-black",
             isClicked === "filter" ? "font-bold" : "font-normal"
           )}
         >
-          Filter
+          筛选
         </span>
       </Button>
       <Button
-        className="flex flex-col items-center rounded-full bg-white px-4 py-2 font-normal"
+        className="flex flex-col items-center border-transparent shadow-none p-2"
         onClick={() => isClickHandler("orders")}
       >
-        <Cigarette
+        <ClipboardList
           color="black"
           strokeWidth={isClicked === "orders" ? 2.5 : 1.25}
         />
         <span
           className={cn(
-            "ml-2 text-sm text-black",
+            "text-sm text-black",
             isClicked === "orders" ? "font-bold" : "font-normal"
           )}
         >
-          Orders
+          订单
         </span>
       </Button>
       <Button
@@ -77,7 +77,7 @@ const BottomBarActions = () => {
           isClickHandler("cart");
           router.push("/cart");
         }}
-        className="flex flex-col items-center rounded-full bg-white px-4 py-2 min-w-16 font-normal"
+        className="flex flex-col items-center border-transparent shadow-none p-2"
       >
         <ShoppingCart
           color="black"
@@ -85,7 +85,7 @@ const BottomBarActions = () => {
         />
         <span
           className={cn(
-            "ml-2 text-sm text-black",
+            "text-sm text-black",
             isClicked === "cart" ? "font-bold" : "font-normal"
           )}
         >
