@@ -12,7 +12,7 @@ const orderHistoryDetail: React.FC<OrderDetailProps> = ({id, details}) => {
   return (
     <div>
         {/* display all previous page info + this page details */}
-      <img src="" alt="" />
+      {/* <img src="" alt="" /> */}
       <h3>Product Name</h3>
       <p>Product Details Info ....</p>
     </div>

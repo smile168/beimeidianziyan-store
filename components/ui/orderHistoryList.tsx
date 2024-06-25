@@ -76,6 +76,7 @@ const OrderHistoryList: React.FC<OrderHistoryProps> = ({ eachOrderInfo }) => {
         <div className="flex flex-row">
           {orderLayoutRow1.map((item) => (
             <div
+              key={item.label}
               className={cn(
                 "flex flex-col pr-8 lg:pr-16 pb-6",
                 !item.label.includes("订单号") ? `max-sm:hidden` : null
@@ -112,8 +113,14 @@ const OrderHistoryList: React.FC<OrderHistoryProps> = ({ eachOrderInfo }) => {
       <div className="flex flex-row max-sm:flex-col justify-between pt-6">
         <div className="flex flex-row max-sm:flex-col">
           {orderLayoutRow2.map((item) => (
-            <div className="flex pr-8 lg:pr-16">
-              <p className={item.hasLabel ? `font-lg font-semibold whitespace-nowrap` : `hidden`}>
+            <div key={item.label} className="flex pr-8 lg:pr-16">
+              <p
+                className={
+                  item.hasLabel
+                    ? `font-lg font-semibold whitespace-nowrap`
+                    : `hidden`
+                }
+              >
                 {item.label}
               </p>
               <div className="flex">
